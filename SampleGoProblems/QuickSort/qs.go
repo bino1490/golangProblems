@@ -29,5 +29,5 @@ func quicksort(nums []int, left, right int) {
 func main() {
 	nums := []int{3, 2, 6, 4, 0, 7, 1}
 	quicksort(nums, 0, len(nums)-1)
-	fmt.Println(nums)
+	fmt.Println(nums[:2])
 }
