@@ -4,6 +4,14 @@ import (
 	"fmt"
 )
 
+func quicksort(nums []int, left, right int) {
+	if left < right {
+		pivotIndex := partition(nums, left, right)
+		quicksort(nums, left, pivotIndex-1)
+		quicksort(nums, pivotIndex+1, right)
+	}
+}
+
 func partition(nums []int, left, right int) int {
 	i := left
 	pivot := nums[right]
@@ -16,14 +24,6 @@ func partition(nums []int, left, right int) int {
 	}
 	nums[i], nums[right] = nums[right], nums[i]
 	return i
-}
-
-func quicksort(nums []int, left, right int) {
-	if left < right {
-		pivotIndex := partition(nums, left, right)
-		quicksort(nums, left, pivotIndex-1)
-		quicksort(nums, pivotIndex+1, right)
-	}
 }
 
 func main() {
